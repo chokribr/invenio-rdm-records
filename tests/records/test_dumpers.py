@@ -141,7 +141,10 @@ def test_locationsdumper_with_no_featurecollection(app, db, minimal_record):
     dump = record.dumps(dumper=dumper)
 
 
-@unittest.mock.patch('invenio_rdm_records.records.dumpers.shapely', None)
+@unittest.mock.patch(
+    'invenio_rdm_records.records.dumpers.locations.shapely',
+    None
+)
 def test_locationsdumper_with_polygon_and_no_shapely(app, db, minimal_record):
     dumper = ElasticsearchDumper(
         extensions=[LocationsDumper()]
@@ -173,7 +176,7 @@ def test_locationsdumper_with_polygon_and_mock_shapely(
     app, db, minimal_record
 ):
     with unittest.mock.patch(
-        'invenio_rdm_records.records.dumpers.shapely'
+        'invenio_rdm_records.records.dumpers.locations.shapely'
     ) as shapely:
         dumper = ElasticsearchDumper(
             extensions=[LocationsDumper()]
