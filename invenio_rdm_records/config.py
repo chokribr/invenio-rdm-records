@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2019-2025 CERN.
+# Copyright (C) 2019-2026 CERN.
 # Copyright (C) 2019 Northwestern University.
 # Copyright (C) 2021-2024 Graz University of Technology.
 # Copyright (C) 2023 TU Wien.
+# Copyright (C) 2025-2026 University of Münster.
 #
 # Invenio-RDM-Records is free software; you can redistribute it and/or modify
 # it under the terms of the MIT License; see LICENSE file for more details.
@@ -114,6 +115,11 @@ RDM_RECORDS_IDENTIFIERS_SCHEMES = {
     "upc": {"label": _("UPC"), "validator": always_valid, "datacite": "UPC"},
     "url": {"label": _("URL"), "validator": idutils.is_url, "datacite": "URL"},
     "urn": {"label": _("URN"), "validator": idutils.is_urn, "datacite": "URN"},
+    "wikidata": {
+        "label": _("Wikidata"),
+        "validator": idutils.is_wikidata,
+        "datacite": "Other",
+    },
     "w3id": {"label": _("W3ID"), "validator": always_valid, "datacite": "w3id"},
     "other": {"label": _("Other"), "validator": always_valid, "datacite": "Other"},
 }
@@ -124,7 +130,7 @@ RDM_RECORDS_RELATED_IDENTIFIERS_SCHEMES = RDM_RECORDS_IDENTIFIERS_SCHEMES
 """This variable is used to separate related identifiers."""
 
 RDM_RECORDS_LOCATION_SCHEMES = {
-    "wikidata": {"label": _("Wikidata"), "validator": always_valid},
+    "wikidata": {"label": _("Wikidata"), "validator": idutils.is_wikidata},
     "geonames": {"label": _("GeoNames"), "validator": always_valid},
 }
 

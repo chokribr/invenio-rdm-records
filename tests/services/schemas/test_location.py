@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2020 CERN.
+# Copyright (C) 2020-2026 CERN.
 #
 # Invenio-RDM-Records is free software; you can redistribute it and/or modify
 # it under the terms of the MIT License; see LICENSE file for more details.
@@ -21,8 +21,8 @@ def valid_full_location():
         "place": "test location place",
         "description": "test location description",
         "identifiers": [
-            {"identifier": "12345abcde", "scheme": "wikidata"},
-            {"identifier": "12345abcde", "scheme": "geonames"},
+            {"identifier": "Q39", "scheme": "wikidata"},
+            {"identifier": "https://www.geonames.org/2660646", "scheme": "geonames"},
         ],
     }
 
@@ -37,7 +37,7 @@ def test_valid_full(app, valid_full_location):
         ({"geometry": {"type": "Point", "coordinates": [-32.94682, -60.63932]}}),
         ({"description": "test location description"}),
         ({"place": "test location place"}),
-        ({"identifiers": [{"identifier": "12345abcde", "scheme": "wikidata"}]}),
+        ({"identifiers": [{"identifier": "Q39", "scheme": "wikidata"}]}),
     ],
 )
 def test_valid_minimal(app, valid_minimal_location):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2019-2025 CERN.
+# Copyright (C) 2019-2026 CERN.
 # Copyright (C) 2019-2022 Northwestern University.
 # Copyright (C) 2021 TU Wien.
 # Copyright (C) 2022-2023 Graz University of Technology.
@@ -585,8 +585,11 @@ def full_record(users):
                         "place": "test location place",
                         "description": "test location description",
                         "identifiers": [
-                            {"identifier": "12345abcde", "scheme": "wikidata"},
-                            {"identifier": "12345abcde", "scheme": "geonames"},
+                            {"identifier": "Q39", "scheme": "wikidata"},
+                            {
+                                "identifier": "https://www.geonames.org/2660646",
+                                "scheme": "geonames",
+                            },
                         ],
                     }
                 ]
@@ -855,8 +858,11 @@ def enhanced_full_record(users):
                         "place": "test location place",
                         "description": "test location description",
                         "identifiers": [
-                            {"identifier": "12345abcde", "scheme": "wikidata"},
-                            {"identifier": "12345abcde", "scheme": "geonames"},
+                            {"identifier": "Q39", "scheme": "wikidata"},
+                            {
+                                "identifier": "https://www.geonames.org/2660646",
+                                "scheme": "geonames",
+                            },
                         ],
                     }
                 ]
